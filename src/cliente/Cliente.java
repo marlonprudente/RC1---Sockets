@@ -20,9 +20,10 @@ public class Cliente {
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         
         /*Ip do Servidor e porta*/
-        Socket clientSocket = new Socket("100.43.1.61",12345);
+        Socket clientSocket = new Socket("127.0.0.1",12345);
         System.out.println("O cliente se conectou ao servidor!");
         
+        /*Lê do Teclado e envia para o servidor*/
         Scanner teclado = new Scanner(System.in);
         PrintStream saida = new PrintStream(clientSocket.getOutputStream());
      

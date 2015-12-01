@@ -5,24 +5,30 @@
  */
 package servidor;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.*;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
  * @author Marlon Prudente <marlonmateuspr@gmail.com>
  */
 public class ThreadTratamento implements Runnable  {
-
-    @Override
-    public void run () {
-        
+    Socket cliente;
+    
+    @Override 
+    public void run () {            
+            System.out.println("Nova conexão com o cliente " + cliente.getInetAddress().getHostAddress());
+            
+            /*Lê o que o cliente está enviando e mostra*/
+            /*Scanner s = new Scanner(cliente.getInputStream());
+            while (s.hasNextLine()) {
+                System.out.println(s.nextLine());
+            }
+            s.close();
+            */
     }
-
+   public ThreadTratamento(Socket cliente){
+        this.cliente = cliente;
+    }
 }

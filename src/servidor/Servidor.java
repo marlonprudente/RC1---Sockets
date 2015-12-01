@@ -26,7 +26,11 @@ public class Servidor {
         while (true) {
             Socket connectionSocketCliente = SocketServidor.accept();
             System.out.println("Nova conexão com o cliente " + connectionSocketCliente.getInetAddress().getHostAddress());
-
+            ThreadTratamento tt = new ThreadTratamento(connectionSocketCliente);
+            Thread t = new Thread(tt);
+            t.start();
+            
+            /*Lê o que o cliente está enviando e mostra*/
             Scanner s = new Scanner(connectionSocketCliente.getInputStream());
             while (s.hasNextLine()) {
                 System.out.println(s.nextLine());
