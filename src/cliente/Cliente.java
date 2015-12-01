@@ -18,7 +18,8 @@ public class Cliente {
         String modifiedSentence;
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         
-        Socket clientSocket = new Socket("100.43.1.61",6789);
+        Socket clientSocket = new Socket("100.43.1.61",12345);
+        
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         
         BufferedReader InFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
