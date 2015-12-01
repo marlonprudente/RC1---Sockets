@@ -12,19 +12,19 @@ import java.net.*;
  */
 public class Cliente {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         String sentence;
         String modifiedSentence;
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         
-        Socket clientSocket = new Socket();
+        Socket clientSocket = new Socket("100.43.1.61",6789);
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         
         BufferedReader InFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         
         sentence = inFromUser.readLine();
-        outToServer.writeBytes(sentence /*+*/ );
+        outToServer.writeBytes(sentence + '\n' );
         modifiedSentence = InFromServer.readLine();
         
         System.out.println(modifiedSentence);
