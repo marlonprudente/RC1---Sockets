@@ -18,6 +18,7 @@ public class Cliente {
         String modifiedSentence;
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         
+        /*Ip do Servidor e porta*/
         Socket clientSocket = new Socket("100.43.1.61",12345);
         
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
