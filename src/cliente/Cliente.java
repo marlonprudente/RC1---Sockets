@@ -6,6 +6,7 @@
 package cliente;
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 /**
  * @author Marlon Prudente
  * @author Mateus Oliveira
@@ -20,6 +21,14 @@ public class Cliente {
         
         /*Ip do Servidor e porta*/
         Socket clientSocket = new Socket("100.43.1.61",12345);
+        System.out.println("O cliente se conectou ao servidor!");
+        
+        Scanner teclado = new Scanner(System.in);
+        PrintStream saida = new PrintStream(clientSocket.getOutputStream());
+     
+        while (teclado.hasNextLine()) {
+            saida.println(teclado.nextLine());
+        }
         
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         
@@ -31,6 +40,7 @@ public class Cliente {
         
         System.out.println(modifiedSentence);
         clientSocket.close();
+        saida.close();
     }
     
 }
