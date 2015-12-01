@@ -7,8 +7,8 @@ package cliente;
 import java.io.*;
 import java.net.*;
 /**
- *
- * @author a1562339
+ * @author Marlon Prudente
+ * @author Mateus Oliveira
  */
 public class Cliente {
     

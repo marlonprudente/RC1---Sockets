@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 /**
  *
- * @author a1562339
+ * @author Marlon Prudente
+ * @author Mateus Oliveira
  */
 public class Servidor {
 
