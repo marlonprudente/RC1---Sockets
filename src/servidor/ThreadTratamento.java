@@ -5,25 +5,16 @@
  */
 package servidor;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import static java.lang.System.out;
+import java.io.*;
+
 import java.net.*;
-import java.util.Date;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import com.sun.net.httpserver.HttpServer;
-import java.io.File;
+import java.util.*;
 import java.nio.file.Files;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 /**
  *
  * @author Marlon Prudente <marlonmateuspr@gmail.com>
+ * @author Mateus Oliveira
  */
 public class ThreadTratamento implements Runnable {
     Socket cliente;

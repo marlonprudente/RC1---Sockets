@@ -5,7 +5,6 @@
  */
 package servidor;
 
-import com.sun.net.httpserver.HttpServer;
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -18,9 +17,8 @@ import java.util.Scanner;
 public class Servidor {
 
     public static void main(String[] args) throws Exception {  
-        //HttpServer httpserver;
-        ServerSocket SocketServidor = new ServerSocket(12345);
-        //httpserver = new HttpServer("localhost",12345);
+        
+        ServerSocket SocketServidor = new ServerSocket(12345);        
         System.out.println("Porta 12345 aberta!");
 
         while (true) {
