@@ -28,16 +28,13 @@ import java.text.SimpleDateFormat;
 public class ThreadTratamento implements Runnable {
     Socket cliente;
     ServerSocket SocketServidor;
-    protected Thread runningThread = null;
     String clientSentence;
     String capitalizedSentence;
     byte[] conteudo;
     @Override 
     public void run  () {      
-            try{
+            try{    
                 
-                            
-
             BufferedReader inFromClient = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
             DataOutputStream outToClient = new DataOutputStream(cliente.getOutputStream());
             
