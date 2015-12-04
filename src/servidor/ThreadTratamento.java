@@ -25,7 +25,8 @@ public class ThreadTratamento implements Runnable {
     @Override 
     public void run  () {      
             try{    
-                
+            System.out.println("Nova conexão com o cliente " + cliente.getInetAddress().getHostAddress());
+            
             BufferedReader inFromClient = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
             DataOutputStream outToClient = new DataOutputStream(cliente.getOutputStream());
             
@@ -34,22 +35,19 @@ public class ThreadTratamento implements Runnable {
                 arquivo = new File("404.html");
             }
             conteudo = Files.readAllBytes(arquivo.toPath());
-            outToClient.write(conteudo);
-            outToClient.flush();
-            
+            outToClient.write(conteudo);            
             clientSentence = inFromClient.readLine();
             capitalizedSentence = clientSentence.toUpperCase();
-            outToClient.writeBytes(capitalizedSentence);
+            outToClient.writeBytes(capitalizedSentence);            
             
-            
-            /*Lê o que o cliente está enviando e mostra*/ 
+            /*Lê o que o cliente está enviando e mostra*/            
            Scanner s = new Scanner(cliente.getInputStream());
             while (s.hasNextLine()) {
                 System.out.print("Cliente: " + cliente.getInetAddress().getHostAddress() + " ");
                 System.out.println(s.nextLine());
             }
             s.close(); 
-            
+            outToClient.flush();
             }catch(Exception ex){
                 System.out.println(ex);
             }

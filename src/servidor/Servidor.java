@@ -20,16 +20,15 @@ public class Servidor {
         
         ServerSocket SocketServidor = new ServerSocket(12345);        
         System.out.println("Porta 12345 aberta!");
-
+        
         while (true) {
-            Socket connectionSocketCliente = SocketServidor.accept();
-            System.out.println("Nova conexão com o cliente " + connectionSocketCliente.getInetAddress().getHostAddress());
+            Socket connectionSocketCliente = SocketServidor.accept();            
             
             /*Aqui deve iniciar uma Thread para receber mais de uma conexão*/
             ThreadTratamento tt = new ThreadTratamento(connectionSocketCliente);
             Thread t = new Thread(tt);
-            t.start();          
-
+            t.start();         
+            
         }
 
     }
